@@ -1,0 +1,37 @@
+{% extends 'about.html'%}
+{%block head%}
+{%load static%}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    {% endblock head%}
+{%block title%} Login {% endblock title %}
+{%block body%}
+<div class="container">
+
+    <div class="form-box">
+        <h1> GEO VIRTUAL TOUR</h1>
+     <h2> LOGIN</h2>
+     {% for message in messages%}
+     <h3>{{message}}</h3>
+     {% endfor %}
+     <form method="post" action="login">
+        {% csrf_token %}
+     <div class="input-group">
+      <div class="input-field">
+        <input type="username" name="username" placeholder="USERNAME">
+      </div>
+
+      <div class="input-field">
+        <input type="password" name="password" placeholder="PASSWORD">
+      </div>
+     </div>
+    <div class="but-field">
+        <button type="submit">LOGIN</button> 
+
+    </div>
+    <p> New user?<a href="/register">Create an account</a></p>
+    </form>
+</div>
+</div>
+    </div>
+</div>
+{% endblock body %} 

@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{%block title%} Services {% endblock title %}
+{%block body%} 
+
+<div class="container my-4">
+<div class="row">
+  {% for x in video%}
+  <div class="col-md-4">
+    <div class="card mb-4 shadow-sm">
+       <div class="embed-responsive embed-responsive-16by9">       
+           <video class="video-fluid" controls="controls">
+            <source src="{{x.video.url}}" type="video/mp4">
+           </video>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{x.name}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a class="btn btn-dark" role="button" href="/detail">View</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    </div>
+
+{% endblock body %} 

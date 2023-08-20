@@ -1,0 +1,44 @@
+{% extends 'about.html'%}
+{%block head%}
+{%load static%}
+    <link rel="stylesheet" href="{% static 'reg.css'%}">
+    {% endblock head%}
+{%block title%} Register {% endblock title %}
+{%block body%}
+{% for message in messages%}
+<h5>{{message}}</h5>
+{% endfor %}
+<div class="container">
+
+  <div class="form-box">
+      <h1> GEO VIRTUAL TOUR</h1>
+   <h2>REGISTER</h2>
+   <form method="POST" action="register">
+     {% csrf_token %}
+   <div class="input-group">
+
+    <div class="input-field">
+      <input type="username" name="username" placeholder="USERNAME">
+    </div>
+
+    <div class="input-field">
+      <input type="email" name="email" placeholder="EMAIL">
+    </div>
+
+    <div class="input-field">
+      <input type="password" name="password" placeholder="PASSWORD">
+    </div>
+    <div class="input-field">
+      <input type="password" name="confirmpassword" placeholder="CONFIRM PASSWORD">
+    </div>
+   </div>
+  <div class="but-field">
+      <button type="submit"> REGISTER </button>
+  </div>
+  <p>Already have an account?<a href="/login">Login</a></p>
+  </form>
+</div>
+</div>
+  </div>
+</div>
+{% endblock body %} 
